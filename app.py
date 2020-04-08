@@ -4,19 +4,22 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from models import setup_db, Actors, Movies
 
+
 def create_app(test_config=None):
   # create and configure the app
   app = Flask(__name__)
   setup_db(app)
   CORS(app)
 
-  @app.route('/')
-  def healthy_check():
-    return jsonify({
-      'healthy': 'check'
-    })
-
   return app
+
+@app.route('/')
+def healthy_check():
+  return jsonify({
+    'healthy': 'check'
+  })
+
+  
 
 app = create_app()
 

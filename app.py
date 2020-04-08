@@ -21,4 +21,4 @@ def create_app(test_config=None):
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(host='rory-dwan-capstone.herokuapp.com', port=8080, debug=True)
+    app.run()

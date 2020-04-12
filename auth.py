@@ -31,7 +31,6 @@ def get_token_auth_header():
     elif auth_header[0].lower() != 'bearer':
         abort(401)
 
-    print('We here')
     return token
 
 
@@ -51,7 +50,6 @@ def check_permissions(permission, payload):
 
 
 def verify_decode_jwt(token):
-    print(token)
     # GET THE PUBLIC KEY FROM AUTH0
     jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
     jwks = json.loads(jsonurl.read())
